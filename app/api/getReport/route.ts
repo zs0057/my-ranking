@@ -8,9 +8,16 @@ export async function GET(request: Request) {
   const date = searchParams.get("date");
 
   if (!userId || !date) {
-    return NextResponse.json(
-      { error: "Missing user_id or date" },
-      { status: 400 }
+    return new NextResponse(
+      JSON.stringify({ error: "Missing user_id or date" }),
+      {
+        status: 400,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
+      }
     );
   }
 
@@ -22,12 +29,44 @@ export async function GET(request: Request) {
 
   if (error) {
     console.error("Error fetching data:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return new NextResponse(JSON.stringify({ error: error.message }), {
+      status: 500,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
+    });
   }
 
   if (!data || data.length === 0) {
-    return NextResponse.json({ message: "No report found" }, { status: 404 });
+    return new NextResponse(JSON.stringify({ message: "No report found" }), {
+      status: 404,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
+    });
   }
 
-  return NextResponse.json(data[0]);
+  return new NextResponse(JSON.stringify(data[0]), {
+    status: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  });
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  });
 }
