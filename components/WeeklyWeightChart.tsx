@@ -134,7 +134,7 @@ const WeeklyWeightChart: React.FC = () => {
     plugins: {
       legend: {
         display: true,
-        position: "top",
+        position: "top" as const,
       },
       title: {
         display: true,
@@ -142,7 +142,7 @@ const WeeklyWeightChart: React.FC = () => {
         font: {
           size: 20,
           weight: "bold",
-        },
+        } as const,
         color: "#333",
       },
     },

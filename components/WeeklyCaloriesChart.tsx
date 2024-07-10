@@ -49,7 +49,7 @@ const WeeklyCaloriesChart: React.FC<PageProps> = ({ params }: PageProps) => {
     plugins: {
       legend: {
         display: true,
-        position: "top",
+        position: "top" as const,
       },
       title: {
         display: true,
@@ -57,7 +57,7 @@ const WeeklyCaloriesChart: React.FC<PageProps> = ({ params }: PageProps) => {
         font: {
           size: 20,
           weight: "bold",
-        },
+        } as const,
         color: "#333",
       },
     },

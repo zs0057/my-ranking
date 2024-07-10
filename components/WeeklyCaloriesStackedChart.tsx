@@ -194,7 +194,7 @@ const WeeklyCaloriesStackedChart: React.FC = () => {
         font: {
           size: 20,
           weight: "bold",
-        },
+        } as const,
         color: "#333",
       },
     },
