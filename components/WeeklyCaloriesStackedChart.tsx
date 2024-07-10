@@ -86,6 +86,7 @@ const WeeklyCaloriesStackedChart: React.FC = () => {
       const lunch = xs.map((item: any) => item.lunch ?? 0);
       const dinner = xs.map((item: any) => item.dinner ?? 0);
       const snack = xs.map((item: any) => item.snack ?? 0);
+
       if (current_room == 4) {
         setData({
           labels: [

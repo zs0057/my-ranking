@@ -29,6 +29,7 @@ export async function GET(request: Request) {
   const today = new Date();
   const yesterday = new Date(today);
   yesterday.setDate(today.getDate() - 1);
+  yesterday.setHours(today.getHours() + 9);
   const startDate = new Date(currentRoom === 4 ? "2024-07-01" : "2024-07-04");
   const endDate = yesterday;
 
