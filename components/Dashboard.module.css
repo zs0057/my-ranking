@@ -1,0 +1,128 @@
+.container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 380px; /* Width reduced by 20px */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: #ff6b81;
+  color: white;
+  padding: 8px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: -15px;
+}
+
+.date {
+  font-size: 18px;
+  opacity: 0.9;
+  font-weight: 700; /* Bold */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: -8px;
+}
+
+.content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 700; /* Bold */
+  color: #333;
+}
+
+.sectionCalories {
+  font-size: 28px;
+  font-weight: 900; /* Black */
+  margin-bottom: 20px;
+  color: #ff6b81;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  width: 143px;
+  height: 143px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #555;
+}
+
+.calories {
+  font-size: 18px;
+  font-weight: 900; /* Black */
+  color: #333;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-weight: 600; /* Semi Bold */
+  color: #777;
+  margin-top: 5px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: #ff6b81;
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 700; /* Bold */
+}
+
+.chart-container {
+  margin-top: 20px;
+}
+
+.greenArrow {
+  color: #ff6b81; /* 초록색 화살표 */
+}
+
+.redArrow {
+  color: #ff6b81; /* 빨간색 화살표 */
+}
+
+.calIndicator {
+  margin-top: -3px;
+  display: flex; /* Flexbox 적용 */
+  align-items: center; /* 아이템을 세로 중앙 정렬 */
+  gap: 1px; /* 아이콘과 숫자 사이의 간격 */
+  font-size: 13px;
+}
+.calDiff {
+  color: #ff6b81; /* 빨간색 화살표 */
+  font-weight: 700;
+}
+.calTitle {
+  color: #999;
+  font-weight: 400;
+}
