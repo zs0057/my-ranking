@@ -65,14 +65,18 @@ export async function getContent(userId: string, date: string) {
   }
 }
 
-// 어제 날짜를 가져와 형식화하는 함수
 export const getYesterDate = () => {
-  const today = new Date();
-  today.setHours(today.getHours() + 9);
-  today.setDate(today.getDate() - 1); // 현재 날짜에서 하루를 뺍니다.
-  const year = today.getFullYear();
-  const month = (today.getMonth() + 1).toString().padStart(2, "0"); // 월은 0부터 시작하므로 +1하고, 두 자리로 만듭니다.
-  const day = today.getDate().toString().padStart(2, "0"); // 날짜를 두 자리로 만듭니다.
+  const now = new Date();
+  const utcNow = now.getTime() + now.getTimezoneOffset() * 60000; // 현재 시간을 UTC로 변환
+  const kstTime = utcNow + 9 * 60 * 60 * 1000; // UTC 시간을 KST로 변환
+  const kstDate = new Date(kstTime);
+
+  // KST 기준으로 어제 날짜 계산
+  kstDate.setDate(kstDate.getDate() - 1);
+
+  const year = kstDate.getFullYear();
+  const month = (kstDate.getMonth() + 1).toString().padStart(2, "0");
+  const day = kstDate.getDate().toString().padStart(2, "0");
 
   return `${year}-${month}-${day}`;
 };
