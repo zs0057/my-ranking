@@ -32,17 +32,17 @@ const replaceZeroWithNull = (arr: number[]): (number | null)[] => {
   return arr.map((value) => (value === 0 ? null : value));
 };
 
-const WeeklyWeightChart: React.FC<WeeklyWeightChartProps> = ({
+const WeeklyExerciseMinutes: React.FC<WeeklyWeightChartProps> = ({
   weight,
   labelDate,
 }) => {
-  const processedWeight = replaceZeroWithNull(weight);
+  const processedWeight = weight;
 
   const [data, setData] = useState<any>({
     labels: labelDate,
     datasets: [
       {
-        label: "몸무게",
+        label: "분",
         data: processedWeight,
         borderColor: "#ff6b81",
         backgroundColor: "rgba(255, 107, 129, 0.2)",
@@ -52,12 +52,12 @@ const WeeklyWeightChart: React.FC<WeeklyWeightChartProps> = ({
   });
 
   useEffect(() => {
-    const updatedWeight = replaceZeroWithNull(weight);
+    const updatedWeight = weight;
     setData({
       labels: labelDate,
       datasets: [
         {
-          label: "몸무게",
+          label: "분",
           data: updatedWeight,
           borderColor: "#ff6b81",
           backgroundColor: "rgba(255, 107, 129, 0.2)",
@@ -68,7 +68,7 @@ const WeeklyWeightChart: React.FC<WeeklyWeightChartProps> = ({
   }, [weight, labelDate]);
 
   const maxWeight =
-    Math.max(...processedWeight.filter((val) => val !== null)) + 0.5;
+    Math.max(...processedWeight.filter((val) => val !== null)) + 5;
 
   const options = {
     responsive: true,
@@ -80,7 +80,7 @@ const WeeklyWeightChart: React.FC<WeeklyWeightChartProps> = ({
       },
       title: {
         display: true,
-        text: "주간 몸무게 변화",
+        text: "주간 운동 시간 변화",
         font: {
           size: 20,
           weight: "bold",
@@ -109,4 +109,4 @@ const WeeklyWeightChart: React.FC<WeeklyWeightChartProps> = ({
   );
 };
 
-export default WeeklyWeightChart;
+export default WeeklyExerciseMinutes;

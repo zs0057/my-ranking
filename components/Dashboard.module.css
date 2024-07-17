@@ -6,7 +6,7 @@
 }
 
 .header {
-  background-color: #ff6b81;
+  background-color: #f1a3bf; /* 0.5는 불투명도 (0은 투명, 1은 불투명) */
   color: white;
   padding: 8px;
   border-radius: 15px;
@@ -15,16 +15,31 @@
   margin-top: -15px;
 }
 
+.headerDate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  font-size: 1.1rem; /* 버튼 크기를 줄임 */
+  cursor: pointer;
+  padding: 0 5px; /* 버튼의 패딩을 줄임 */
+}
+
 .date {
   font-size: 18px;
   opacity: 0.9;
   font-weight: 700; /* Bold */
+  margin: 0 5px; /* 버튼과 날짜 사이의 여백을 줄임 */
 }
 
 .logo {
   font-size: 24px;
   font-weight: 700;
-  margin-top: -8px;
+  margin-top: -5px; /* 로고와 날짜 사이의 간격을 좁힘 */
 }
 
 .content {
@@ -33,6 +48,7 @@
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 15px;
+  transition: min-height 0.3s ease; /* 애니메이션 추가 */
 }
 
 .sectionTitle {
@@ -45,7 +61,7 @@
   font-size: 28px;
   font-weight: 900; /* Black */
   margin-bottom: 20px;
-  color: #ff6b81;
+  color: #f1a3bf;
 }
 
 .gridContainer {
@@ -91,7 +107,7 @@
 .footer {
   display: flex;
   justify-content: center;
-  background-color: #ff6b81;
+  background-color: #f1a3bf;
   color: white;
   padding: 15px;
   border-radius: 15px;
@@ -103,26 +119,105 @@
   margin-top: 20px;
 }
 
-.greenArrow {
-  color: #ff6b81; /* 초록색 화살표 */
+.downArrow {
+  color: #2699e6; /* 초록색 화살표 */
 }
 
-.redArrow {
-  color: #ff6b81; /* 빨간색 화살표 */
+.upArrow {
+  color: #ff6b81; /* 빨간색 화살표 ff6b81*/
 }
 
 .calIndicator {
-  margin-top: -3px;
+  margin-top: -2px;
   display: flex; /* Flexbox 적용 */
   align-items: center; /* 아이템을 세로 중앙 정렬 */
   gap: 1px; /* 아이콘과 숫자 사이의 간격 */
   font-size: 13px;
 }
-.calDiff {
-  color: #ff6b81; /* 빨간색 화살표 */
+
+.downCalDiff {
+  color: #2699e6;
   font-weight: 700;
 }
+
+.upCalDiff {
+  color: #ff6b81;
+  font-weight: 700;
+}
+
 .calTitle {
   color: #999;
   font-weight: 400;
+}
+
+.headerToggle {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center; /* 토글 버튼을 가운데 정렬 */
+  width: 100%; /* 부모 요소의 전체 너비를 사용 */
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  font-size: 16px; /* 버튼 크기를 줄임 */
+  cursor: pointer;
+  padding: 8px 16px; /* 버튼의 패딩을 줄임 */
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  width: 100px; /* 가로 길이 동일하게 설정 */
+  display: flex;
+  justify-content: center; /* 텍스트를 가운데 정렬 */
+  align-items: center; /* 텍스트를 가운데 정렬 */
+  height: 36px; /* 버튼 높이 설정 */
+}
+
+.toggleButton.active {
+  background-color: #ff6b81;
+  color: white;
+}
+
+.section-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.section-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.section-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-exit-active {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.sectionEnter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.sectionEnterActive {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.sectionExit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionExitActive {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
 }

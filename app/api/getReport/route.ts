@@ -23,7 +23,7 @@ export async function GET(request: Request) {
 
   const { data, error } = await supabase
     .from("daily_reports")
-    .select("breakfast, lunch, dinner, snack, weight")
+    .select("breakfast, lunch, dinner, snack, weight, exercise_minutes")
     .eq("user_id", userId)
     .eq("date", date);
 
