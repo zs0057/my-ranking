@@ -46,6 +46,7 @@ const Dashboard: React.FC<DashboardProps> = ({
   const userIdRef = useRef<string | null>(null); // userId 상태 추가
 
   const fetchUserId = useCallback(async () => {
+    console.log(params.id);
     const fetchedUserId = await getUserId(params.id);
     userIdRef.current = fetchedUserId.id;
   }, [params.id]);
