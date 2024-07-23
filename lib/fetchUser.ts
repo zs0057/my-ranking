@@ -29,9 +29,9 @@ export const fetchWeightDifferences = async (
   // 2. Get weight differences for each user
   const weightDifferences: WeightDifference[] = [];
 
-  var startDate: string = "2024-07-19";
+  var startDate: string = "2024-07-18";
   if (roomId == 6) {
-    startDate = "2024-07-19";
+    startDate = "2024-07-18";
   } else if (roomId == 7) {
     startDate = "2024-07-22";
   }
@@ -52,7 +52,7 @@ export const fetchWeightDifferences = async (
 
     if (reports && reports.length === 2) {
       const weightDifference = parseFloat(
-        (reports[0].weight - reports[1].weight).toFixed(2)
+        (reports[1].weight - reports[0].weight).toFixed(2)
       );
       weightDifferences.push({ userId, weightDifference });
     }
