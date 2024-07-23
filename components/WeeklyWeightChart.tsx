@@ -74,8 +74,8 @@ const WeeklyWeightChart: React.FC<WeeklyWeightChartProps> = () => {
     plugins: {
       datalabels: {
         color: "black",
-        anchor: "end",
-        align: "right",
+        anchor: "end" as const,
+        align: "right" as const,
       },
     },
   };
