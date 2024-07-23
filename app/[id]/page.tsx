@@ -1,16 +1,15 @@
 "use client";
 import Dashboard from "@/components/Dashboard";
+import useStore from "../../lib/store";
 
 type PageProps = {
   params: {
-    id: string;
+    id: number;
   };
 };
 
 export default function Page({ params }: PageProps) {
-  return (
-    <Dashboard
-      params={params} // params를 전달합니다.
-    />
-  );
+  const setId = useStore((state) => state.setId);
+  setId(params.id);
+  return <Dashboard />;
 }

@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "다이어트 챌린지 리포트",
-  description: "요번 기수도 화이팅입니다!",
+  title: "다이어트 챌린지 감량 랭킹",
+  description: "감량 랭킹",
 };
 
 export default function RootLayout({
