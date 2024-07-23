@@ -8,9 +8,5 @@ type PageProps = {
 };
 
 export default function Page({ params }: PageProps) {
-  return (
-    <Dashboard
-      params={params} // params를 전달합니다.
-    />
-  );
+  return <Dashboard />;
 }

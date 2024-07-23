@@ -15,7 +15,7 @@ const Dashboard: React.FC = () => {
       : 0;
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} font-sans`}>
       <header className={styles.header}>
         <div className={styles.headerTop}>
           <div className={styles.headerDate}>
@@ -32,7 +32,7 @@ const Dashboard: React.FC = () => {
           </div>
         </section>
         <section className={styles.content}>
-          <div className="bg-white p-5 rounded-lg shadow-md text-center ">
+          <div className="bg-white p-5 rounded-lg shadow-md text-center">
             <h2 className="text-xl mb-2">챌린저 평균 몸무게 증감</h2>
             <hr className="border-t-2 border-black mb-2" />
             <p className="text-lg">
