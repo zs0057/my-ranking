@@ -17,6 +17,7 @@ const WeeklyWeightChart: React.FC<WeeklyWeightChartProps> = () => {
   const fetchAndSetUsers = useStore((state) => state.fetchAndSetUsers);
   const bears = useStore((state) => state.bears);
   const id = useStore((state) => state.id);
+  console.log(bears);
 
   const [loading, setLoading] = useState(true); // 로딩 상태 추가
 
@@ -50,7 +51,7 @@ const WeeklyWeightChart: React.FC<WeeklyWeightChartProps> = () => {
   // 최저값을 0.5 단위로 올림한 다음 -0.5를 추가
   const adjustedMin = Math.ceil(minWeightDifference / 0.5) * 0.5 - 1;
   const data = {
-    labels: bears.map((d) => d.userId),
+    labels: bears.map((d) => d.animal),
     datasets: [
       {
         label: "몸무게 변화",

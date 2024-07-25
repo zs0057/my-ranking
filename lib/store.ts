@@ -4,6 +4,7 @@ import { fetchWeightDifferences } from "./fetchUser";
 interface WeightDifference {
   userId: number;
   weightDifference: number;
+  animal: string;
 }
 
 interface BearState {
