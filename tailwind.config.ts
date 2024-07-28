@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        "light-pink": "#f1a3bf",
+      },
       fontFamily: {
         sans: ['"Segoe UI"', "Tahoma", "Geneva", "Verdana", "sans-serif"],
       },
