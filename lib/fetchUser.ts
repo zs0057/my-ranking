@@ -40,6 +40,8 @@ export const fetchWeightDifferences = async (
     startDate = "2024-07-18";
   } else if (roomId == 7) {
     startDate = "2024-07-22";
+  } else if (roomId == 8) {
+    startDate = "2024-08-01";
   }
 
   const currentDate: string = getYesterDate();
