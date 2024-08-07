@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Dashboard.module.css";
 import WeeklyWeightChart from "./WeeklyWeightChart"; // 새로운 컴포넌트 임포트
 import useStore from "@/lib/store";
-import { getYesterdayDateInKorea } from "@/lib/utils";
+import { getYesterDate, getYesterdayDateInKorea } from "@/lib/utils";
 
 // // 한국 시간대로 어제 날짜를 가져오는 함수
 // export const getYesterdayDateInKorea = () => {
@@ -26,8 +26,8 @@ const Dashboard: React.FC = () => {
       : 0;
 
   // 어제 날짜 계산
-  const koreanYesterday = getYesterdayDateInKorea();
-  const formattedDate = koreanYesterday.toISOString().split("T")[0]; // YYYY-MM-DD 형식
+  const formattedDate = getYesterDate();
+  // const formattedDate = koreanYesterday.toISOString().split("T")[0]; // YYYY-MM-DD 형식
 
   return (
     <div className={`${styles.container} font-sans`}>
